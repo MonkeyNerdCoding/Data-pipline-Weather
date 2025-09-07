@@ -1,3 +1,4 @@
+
 services:
   db: 
     container_name: weather_postgres_db
@@ -9,7 +10,30 @@ services:
       POSTGRES_PASSWORD: db_password
       POSTGRES_DB: db
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/airflow_init.sql:/docker-entrypoint-initdb.d/airflow_init.sql
+    networks:
+      - my-network
 
-volumes:
-  postgres_data:
+  airflow:
+    container_name: airflow_container
+    image: apache/airflow:3.0.0
+    ports:
+      - "8080:8080"
+    environment:
+      # AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@db:5432/airflow_db
+      # AIRFLOW__WEBSERVER__SECRET_KEY: my_secret_key
+      # AIRFLOW__API__AUTH_BACKEND: airflow.api.auth.backend.basic
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+    depends_on:
+      - db
+    networks:
+      - my-network
+    command: >
+      bash -c "airflow db migrate && airflow standalone"
+
+networks:
+  my-network:
+    driver: bridge
