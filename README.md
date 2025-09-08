@@ -21,4 +21,12 @@ docker-compose exec db psql -U db_user -d db
 
 ```bash
 sudo docker-compose up
+```
 
+### 5. Fix Permission Denied
+```bash
+ls -l [copy path of the folder]
+
+sudo chgrp -R $USER [copy path of the folder]
+
+sudo chmod 770 [copy path of the folder]
