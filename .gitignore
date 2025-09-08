@@ -1,2 +1,3 @@
 # Bỏ qua thư mục dữ liệu Postgres
 postgres/data/
+.venv

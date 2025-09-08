@@ -27,6 +27,7 @@ services:
       # AIRFLOW__API__AUTH_BACKEND: airflow.api.auth.backend.basic
     volumes:
       - ./airflow/dags:/opt/airflow/dags
+      - ./api-request:/opt/airflow/api-request
     depends_on:
       - db
     networks:
