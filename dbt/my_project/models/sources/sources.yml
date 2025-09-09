@@ -1,0 +1,15 @@
+sources:
+  - name: weather
+    database: db
+    tables:
+      - name: raw_weather_data
+        columns:
+          - name: id
+          - name: city
+          - name: temperature
+          - name: weather_desscription
+          - name: wind_speed
+          - name: time
+          - name: insserted_at
+          - name: utc_offset
+      

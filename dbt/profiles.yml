@@ -8,5 +8,5 @@ my_project:
       password: db_password
       port: 5432
       dbname: db
-      schema: public
+      schema: weather
       threads: 1
