@@ -30,3 +30,12 @@ ls -l [copy path of the folder]
 sudo chgrp -R $USER [copy path of the folder]
 
 sudo chmod 770 [copy path of the folder]
+
+```
+
+### 6. Run Dbt
+```bash
+docker-compose up dbt 
+
+docker-compose down dbt
+```
