@@ -3,7 +3,7 @@ my_project:
   outputs:
     dev:
       type: postgres
-      host: db
+      host: weather_postgres_db
       user: db_user
       password: db_password
       port: 5432
