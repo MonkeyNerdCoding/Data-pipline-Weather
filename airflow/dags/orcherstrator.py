@@ -17,7 +17,7 @@ default_args = {
 dag = DAG(
     dag_id="weather_api_orchestrator",
     description="Orchestrator DAG for weather data processing",
-    schedule=timedelta(minutes=1),
+    schedule=timedelta(minutes=45),
     default_args=default_args,
     catchup=False,
 )

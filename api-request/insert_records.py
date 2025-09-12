@@ -1,7 +1,8 @@
 import psycopg2
-from api_request import mock_fetch_data
+# from api_request import mock_fetch_data
+from api_request import fetch_data
 
-print(mock_fetch_data())
+# print(mock_fetch_data())
 
 def connect_to_db():
     print("Connecting to the Postgres database...")
@@ -72,14 +73,14 @@ def insert_record(conn, data):
 
 def main(): 
     try:
-        data = mock_fetch_data()
+        data = fetch_data()
         conn = connect_to_db()
         create_table(conn)
         insert_record(conn, data)
     except Exception as e:
         print(f"Error occurred: {e}")
     finally:
-        if 'conn' in locals():
+        if 'conn' in locals():      
             conn.close()
             print("Database connection closed.")
 
