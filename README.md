@@ -43,6 +43,7 @@ docker-compose down dbt
 1. Change the api key in venv
 
 ### 8. Step to open Unbutu and run the project (This project must be run on Unbutu (Linux))
+- Information : Whold project goona in "\\wsl$\"
 1. Step 1 : 
 <img width="1335" height="801" alt="image" src="https://github.com/user-attachments/assets/2bc52ad9-1995-4f22-a0ae-e1dbfc91645a" />
 
@@ -59,3 +60,6 @@ docker-compose down dbt
 ```bash
 docker-compose up
 ```
+6. Step 6 :
+- If you want to go back normal enviroment : 
+<img width="1281" height="796" alt="image" src="https://github.com/user-attachments/assets/bc1d80d9-57bf-4fd0-833b-371ac25b773b" />
