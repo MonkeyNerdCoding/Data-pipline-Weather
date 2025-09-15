@@ -1,15 +1,10 @@
-{{config(
-    materialized='table',
-    unique_key='id'
-)}}
-
 with source as(
     select * 
     from {{ source('weather', 'raw_weather_data') }}
 ),
 de_up as (
     select *,
-        row_number() over(partition by id order by inserted_at desc) as rn
+        row_number() over(partition by time order by inserted_at desc) as rn
     from source
 )
 

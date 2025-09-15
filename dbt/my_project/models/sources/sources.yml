@@ -1,15 +1,16 @@
 sources:
   - name: weather
     database: db
+    schema: weather
     tables:
       - name: raw_weather_data
         columns:
           - name: id
           - name: city
           - name: temperature
-          - name: weather_desscription
+          - name: weather_description
           - name: wind_speed
           - name: time
-          - name: insserted_at
+          - name: inserted_at
           - name: utc_offset
       

@@ -31,7 +31,7 @@ with dag:
     task2 = DockerOperator(
         task_id='transform_data_task',
         image='ghcr.io/dbt-labs/dbt-postgres:1.9.latest',
-        command='run',
+        command='dbt run',
         working_dir='/usr/app/dbt',
         mounts=[
             Mount(source='/home/monkeynerd/repos/weather-data-project/dbt/my_project', target='/usr/app/dbt', type='bind'),
