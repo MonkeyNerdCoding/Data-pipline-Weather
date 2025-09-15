@@ -1,4 +1,3 @@
-## Data Pipeline Weather Instruction
 
 ### 1. Create virtual environment
 ```bash
@@ -41,4 +40,22 @@ docker-compose down dbt
 ```
 
 ### 7. API 
-1. Change the api key in venv 
+1. Change the api key in venv
+
+### 8. Step to open Unbutu and run the project (This project must be run on Unbutu (Linux))
+1. Step 1 : 
+<img width="1335" height="801" alt="image" src="https://github.com/user-attachments/assets/2bc52ad9-1995-4f22-a0ae-e1dbfc91645a" />
+
+2. Step 2 : 
+<img width="1280" height="500" alt="image" src="https://github.com/user-attachments/assets/ecb684ab-f822-4426-8373-787275d35120" />
+
+3. Step 3 :
+<img width="711" height="178" alt="image" src="https://github.com/user-attachments/assets/dac986eb-5e9d-4837-b88a-89ed4a5dc8b8" />
+
+4. Step 4 :
+- Choose Open Folder -> Ok
+
+5. Step 5 :
+```bash
+docker-compose up
+```
