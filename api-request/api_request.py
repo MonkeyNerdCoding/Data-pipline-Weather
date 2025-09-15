@@ -1,7 +1,7 @@
 import os
 import requests
 
-# Lấy API key từ biến môi trường
+# Lấy API key từ env
 API_KEY = os.getenv("WEATHERSTACK_API_KEY")
 CITY = "New York"
 API_URL = f"http://api.weatherstack.com/current?access_key={API_KEY}&query={CITY}"
