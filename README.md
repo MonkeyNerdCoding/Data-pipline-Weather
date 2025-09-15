@@ -39,3 +39,6 @@ docker-compose up dbt
 
 docker-compose down dbt
 ```
+
+### 7. API 
+1. Change the api key in venv 
