@@ -33,6 +33,7 @@ services:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@weather_postgres_db:5432/airflow_db
       # AIRFLOW__WEBSERVER__SECRET_KEY: my_secret_key
       # AIRFLOW__API__AUTH_BACKEND: airflow.api.auth.backend.basic
+      WEATHERSTACK_API_KEY: ${WEATHERSTACK_API_KEY}
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./api-request:/opt/airflow/api-request

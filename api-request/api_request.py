@@ -1,19 +1,22 @@
+import os
 import requests
 
-api_key = "7261bc27ead76ec6e9be200a113da3e2"
-api_url = f"http://api.weatherstack.com/current?access_key={api_key}&query=New York"
+# Lấy API key từ biến môi trường
+API_KEY = os.getenv("WEATHERSTACK_API_KEY")
+CITY = "New York"
+API_URL = f"http://api.weatherstack.com/current?access_key={API_KEY}&query={CITY}"
 
-# # Uncomment before deloyment
 def fetch_data():
-    print("Fetching Weather data from weatherstack....")
+    print("Fetching Weather data from Weatherstack....")
     try:
-        response = requests.get(api_url)
+        response = requests.get(API_URL)
         response.raise_for_status()
         print("API response successfully")
-        return response.json() 
+        return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Fetching failed: {e}")
         raise
+
 
 # fetch_data()
 
